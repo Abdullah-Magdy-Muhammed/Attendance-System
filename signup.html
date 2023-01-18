@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <form class="col mx-5 needs-validation">
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label mt-2"
+          >First name</label
+        >
+        <input
+          type="text"
+          class="form-control firstName"
+          id="validationCustom01"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label mt-2"
+          >Last name</label
+        >
+        <input
+          type="text"
+          class="form-control lastName"
+          id="validationCustom02"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="col-md-4">
+        <label for="address" class="form-label mt-2">Address</label>
+        <input type="text" class="form-control" id="address" required />
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="exampleInputEmail1" class="form-label mt-2"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="mail"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <label for="age" class="form-label mt-2"> Age </label>
+        <input
+          type="number"
+          class="form-control"
+          id="age"
+          min="18"
+          max="60"
+          required
+        />
+      </div>
+
+      <div class="col-12">
+        <a href="index.html" class="btn btn-danger mt-2" role="button">Home</a>
+
+        <button class="btn btn-danger mt-2" type="submit">Sign Up</button>
+      </div>
+    </form>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/signup.js" type="module" defer></script>
+  </body>
+</html>

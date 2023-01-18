@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <!-- stylesheet libs-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <header class="row">
+        <a href="index.html"
+          ><img src="img/banner.png" class="col-12 col-sm-8 offset-sm-2" alt=""
+        /></a>
+      </header>
+      <div class="row">
+        <h1 class="mt-2 text-center">Login to the system</h1>
+
+        <form
+          id="loginForm"
+          class="col-12 col-sm-8 offset-sm-2 needs-validation"
+          method="POST"
+          novalidate
+        >
+          <div class="form-group">
+            <label for="username">User Name:</label>
+            <input
+              id="username"
+              name="username"
+              class="form-control"
+              type="text"
+              placeholder="Enter your username"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label for="password">Password:</label>
+            <input
+              id="password"
+              name="password"
+              class="form-control"
+              type="password"
+              placeholder="Enter your password"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a password.</div>
+          </div>
+          <button type="submit" class="btn filled btn-danger">Login</button>
+          <a href="signup.html" class="btn registerbtn btn-danger">Register</a>
+        </form>
+      </div>
+
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script src="js/login.js"></script>
+    </div>
+  </body>
+</html>

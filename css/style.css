@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../img/banner.png");
+  background-position: center;
+  background-size: cover;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 22px;
+}
