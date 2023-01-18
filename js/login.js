@@ -6,13 +6,11 @@ let password = document.getElementById("password");
 async function CheckUsernameAndPassword() {
     let usernameValue = username.value;
     let passwordValue = password.value;
-    let adminData = await fetch(`http://localhost:3000/admin?username=${usernameValue}&password=${passwordValue}`);
-    let adminDataObject = await adminData.json();
     let empData = await fetch(`http://localhost:3000/employees?username=${usernameValue}&password=${passwordValue}`);
     let empDataObject = await empData.json();
-    if (adminDataObject.length) {
+    if (empDataObject[0].role == "admin") {
         alert("this is Admin ")
-    } else if (empDataObject.length) {
+    } else if (empDataObject[0].role == "employee") {
         alert("this is employee")
 
     }

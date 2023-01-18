@@ -4,21 +4,23 @@
       "firstName": "ahmed",
       "lastName": "shams",
       "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
-      "email": "ahmed@gmail.com",
+      "email": "ahmedshams@gmail.com",
       "age": "25",
       "username": "useruser",
       "password": "123456",
-      "id": 5
-    }
-  ],
-  "admin": [
+      "id": 5,
+      "role": "employee"
+    },
     {
-      "id": 1,
-      "firstName": "Abdullah",
-      "lastName": "Magdy",
+      "firstName": "abdullah",
+      "lastName": "magdy",
+      "address": "mansoura city",
       "email": "magdyabdullah200@gmail.com",
+      "age": "25",
       "username": "abdullah",
-      "password": "222000"
+      "password": "222000",
+      "id": 5,
+      "role": "admin"
     }
   ],
   "pending": [
@@ -26,95 +28,19 @@
       "firstName": "ayman",
       "lastName": "nader",
       "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
-      "email": "ayman@gmail.com",
+      "email": "aymannader@gmail.com",
       "age": "26",
       "id": 6,
       "username": "testtest3",
       "password": "123456"
     },
     {
-      "firstName": "youssef",
-      "lastName": "yasser",
-      "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
-      "email": "yousefyasser@gmail.com",
-      "age": "26",
-      "id": 6,
-      "username": "testtest4",
-      "password": "123456"
-    },
-    {
       "firstName": "ahmed",
-      "lastName": "ali",
-      "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
-      "email": "ahmedali@gmail.com",
-      "age": "26",
-      "id": 6,
-      "username": "testtest5",
-      "password": "123456"
-    },
-    {
-      "firstName": "abdullah",
       "lastName": "magdy",
       "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "25",
-      "id": "Umqgo-U"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "25",
-      "id": "yn00HIl"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "28",
-      "id": "tHAUyDq"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "25",
-      "id": "8xEgClc"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200xa@gmail.com",
-      "age": "19",
-      "id": "XssqStE"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "19",
-      "id": "XK2wcWv"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "18",
-      "id": "jXWiAOQ"
-    },
-    {
-      "firstName": "abdullah",
-      "lastName": "magdy",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdyabdullah200@gmail.com",
-      "age": "18",
-      "id": "_gEFvn-"
+      "email": "ahmedmagdy@gmail.com",
+      "age": "27",
+      "id": 7
     }
   ],
   "attendence": [

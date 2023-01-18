@@ -93,22 +93,23 @@ function unquieValidMail() {
 // get all dom elment 
 let empForm = document.getElementsByClassName("needs-validation")[0];
 empForm.addEventListener('submit', (e) => {
+
     if (
-        !(
-            isUserNameValide(firstName.value) &&
-            isUserNameValide(lastName.value) &&
-            unquieValidMail()
-        )
+
+        isUserNameValide(firstName.value) &&
+        isUserNameValide(lastName.value) &&
+        unquieValidMail()
+
     ) {
+        alert("we gonna add")
+        setData();
+
+    } else {
         e.preventDefault();
         mail.focus();
         alert("This Email is Already signed up before!")
 
-    } else {
-        console.log(mailExistence());
 
-        console.log("مش موجود وتم اضافه الميل")
-        setData();
     }
 
 })

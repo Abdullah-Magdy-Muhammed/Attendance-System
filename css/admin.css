@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+thead,
+.nav-link {
+  color: red;
+}
+.nav-link:hover {
+  color: rgb(73, 80, 87);
+}
+h1 {
+  text-shadow: 5px 2px 5px red;
+}

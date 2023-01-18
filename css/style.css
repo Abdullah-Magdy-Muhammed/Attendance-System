@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../img/banner.png");
+  background-image: url("../img/landin.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -12,4 +12,35 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin-top: 22px;
+}
+.btn {
+  color: red;
+  width: 500px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.btn:hover {
+  color: white;
+  background-color: red;
+}
+main h1 {
+  text-align: center;
+  color: white;
+  margin-top: 20vh;
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-image: url("../img/iti-logo.png");
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 200px;
+  }
 }
