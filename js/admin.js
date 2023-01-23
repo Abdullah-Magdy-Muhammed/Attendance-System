@@ -1,5 +1,24 @@
-// function for navbar to be dynamic 
+function searchFunction() {
+    var input, filter, table, tr, td, i, alltables;
+    alltables = document.querySelectorAll("table[data-name=table]");
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    alltables.forEach(function (table) {
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    });
+}
 
+// function for navbar to be dynamic 
 // all divs which have tables of reports
 let pendingReport = document.getElementById("pending");
 let fullReport = document.getElementById("fullreport");
@@ -220,35 +239,7 @@ fetch(`http://localhost:3000/employees`, {
                     }
                     dailyReport.appendChild(tr);
                 })
-
-                // for (let i = 0; i < data.length; i++) {
-                //     let tr = document.createElement("tr");
-                //     dailyReport.appendChild(tr);
-
-                //     let empName = document.createElement("td");
-                //     empName.innerText = `${data[i].firstName} ${data[i].lastName}`;
-                //     tr.appendChild(empName);
-
-                //     let late = document.createElement("td");
-                //     late.innerText = data[i].late;
-                //     tr.appendChild(late);
-
-                //     let absent = document.createElement("td");
-                //     absent.innerText = data[i].absent;
-                //     tr.appendChild(absent);
-
-                //     let postition = document.createElement("td");
-                //     if (data[i].role == 0) {
-                //         postition.innerText = "Employee"
-                //     } else if (data[i].role == 1) {
-                //         postition.innerText = "Secuirty"
-                //     } else {
-                //         postition.innerText = "Admin"
-                //     }
-                //     tr.appendChild(postition)
-                // }
             })
-
     });
 
 

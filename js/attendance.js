@@ -1,20 +1,23 @@
 // to count late time mintues and hours
 let fixedAttendTime = new Date();
-fixedAttendTime.setHours(9);
-fixedAttendTime.setMinutes(0);
-// console.log(fixedAttendTime.getHours())
+fixedAttendTime.setHours(8);
+fixedAttendTime.setMinutes(30);
 
 function countLateTime() {
     let attendetAt = new Date();
 
-    let lateMinites = Number(attendetAt.getMinutes()) - Number(fixedAttendTime.getMinutes());
+    let lateMinutes = Number(attendetAt.getMinutes()) - Number(fixedAttendTime.getMinutes());
     let lateHours = Number(attendetAt.getHours()) - Number(fixedAttendTime.getHours());
     if (lateHours < 0) {
+        return "00:00";
+    }
+    else if (lateHours <= 0 && lateMinutes < 0) {
 
-        return "0:0";
+        return "00:00";
     }
     else {
-        return `${lateHours}:${lateMinites}`;
+
+        return `${lateHours}:${lateMinutes}`;
     }
 }
 const empUsername = document.getElementById("username");

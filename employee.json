@@ -107,31 +107,22 @@
   ],
   "attendence": [
     {
-      "in": "2:31",
-      "out": "7:50",
-      "date": "23-1-2023",
-      "late": "0:0",
+      "in": "1:19",
+      "out": 0,
+      "date": "24-1-2023",
+      "late": "00:00",
       "absent": false,
-      "employeeId": "1",
+      "employeeId": "9",
       "id": 1
     },
     {
-      "in": "4:36",
-      "out": "7:51",
-      "date": "23-1-2023",
-      "late": "0:0",
+      "in": "1:20",
+      "out": 0,
+      "date": "24-1-2023",
+      "late": "00:00",
       "absent": false,
       "employeeId": "3",
-      "id": 3
-    },
-    {
-      "in": "7:52",
-      "out": 0,
-      "date": "23-1-2023",
-      "late": "16:52",
-      "absent": false,
-      "employeeId": "4",
-      "id": 4
+      "id": 2
     }
   ]
 }

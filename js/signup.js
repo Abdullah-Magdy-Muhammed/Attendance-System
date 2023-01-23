@@ -53,14 +53,11 @@ let allEmails = [];
 (async function mailExistence() {
     let employees = await fetch("http://localhost:3000/employees")
     let employeesobj = await employees.json();
-    // let pending = await fetch("http://localhost:3000/pending")
-    // let pendingObjects = await pending.json();
+
     employeesobj.forEach(element => {
         allEmails.push(element.email)
     });
-    // pendingObjects.forEach(element => {
-    //     allEmails.push(element.email)
-    // });
+
 })()
 // console.log(allEmails)
 // email validation
