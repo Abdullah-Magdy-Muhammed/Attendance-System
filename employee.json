@@ -1,61 +1,50 @@
 {
   "employees": [
     {
-      "firstName": "ahmed",
-      "lastName": "shams",
-      "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
-      "email": "ahmedshams@gmail.com",
-      "age": "25",
-      "username": "useruser",
-      "password": "123456",
-      "id": 5,
-      "role": "employee"
-    },
-    {
+      "id": 1,
       "firstName": "abdullah",
       "lastName": "magdy",
-      "address": "mansoura city",
+      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
       "email": "magdyabdullah200@gmail.com",
-      "age": "25",
-      "username": "abdullah",
-      "password": "222000",
-      "id": 5,
-      "role": "admin"
-    }
-  ],
-  "pending": [
-    {
-      "firstName": "ayman",
-      "lastName": "nader",
-      "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
-      "email": "aymannader@gmail.com",
-      "age": "26",
-      "id": 6,
-      "username": "testtest3",
-      "password": "123456"
+      "username": "ZVwZNQz",
+      "password": "27QNpaYE",
+      "age": "23",
+      "role": "0",
+      "accepted": true,
+      "startDate": "21-1-2023"
     },
     {
+      "id": 2,
       "firstName": "ahmed",
-      "lastName": "magdy",
+      "lastName": "hassan",
       "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "ahmedmagdy@gmail.com",
-      "age": "27",
-      "id": 7
+      "email": "ahmedhassanll@gmail.com",
+      "username": "SOxQwwP",
+      "password": "7nemYcer",
+      "age": "25",
+      "role": "1",
+      "accepted": false,
+      "startDate": "20-9-2022"
     }
   ],
   "attendence": [
     {
-      "id": 1,
-      "username": "useruser",
-      "startDate": "12-12-2012",
-      "attend": 0,
-      "absent": 0,
-      "info": [
-        {
-          "date": "17-1-2023",
-          "in": "7:54 am"
-        }
-      ]
+      "in": "2:31",
+      "out": 0,
+      "date": "23-1-2023",
+      "late": "0:0",
+      "absent": false,
+      "employeeId": "1",
+      "id": 1
+    },
+    {
+      "in": "2:32",
+      "out": "2:49",
+      "date": "23-1-2023",
+      "late": "11:32",
+      "absent": false,
+      "employeeId": "2",
+      "id": 2
     }
   ]
 }

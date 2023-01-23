@@ -28,15 +28,44 @@ class Employee {
     get age() {
         return this.#age;
     }
+    getDate() {
+        let date = new Date();
+        return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
+    }
+
+    generateRandomName() {
+        let length = 7,
+            charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            retVal = "";
+        for (let i = 0, n = charset.length; i < length; ++i) {
+            retVal += charset.charAt(Math.floor(Math.random() * n));
+        }
+        return retVal;
+    }
+    generateRandomPassword() {
+        let length = 8,
+            charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+            retVal = "";
+        for (let i = 0, n = charset.length; i < length; ++i) {
+            retVal += charset.charAt(Math.floor(Math.random() * n));
+        }
+        return retVal;
+    }
     SaveToJson() {
-        fetch("http://localhost:3000/pending", {
+        fetch("http://localhost:3000/employees", {
             method: "POST",
             body: JSON.stringify({
+                id: "",
                 firstName: `${this.#fname}`,
                 lastName: `${this.#lname}`,
                 address: `${this.#address}`,
                 email: `${this.#mail}`,
+                username: this.generateRandomName(),
+                password: this.generateRandomPassword(),
                 age: `${this.#age}`,
+                role: `0`,
+                accepted: false,
+                startDate: this.getDate()
             }),
 
             headers: {

@@ -1,77 +1,73 @@
-// get all employee data
-let userNames = [];
-(async function verify() {
-    let allEmployeeData = await fetch(`http://localhost:3000/employees`);
-    let empObjects = await allEmployeeData.json();
-    empObjects.forEach(element => {
-        userNames.push(element.username)
-    });
+// to count late time mintues and hours
+let fixedAttendTime = new Date();
+fixedAttendTime.setHours(9);
+fixedAttendTime.setMinutes(0);
+// console.log(fixedAttendTime)
 
-})();
+function countLateTime() {
+    let attendetAt = new Date();
 
-let attendBtn = document.getElementById("attend");
-let attendInput = document.getElementById("username");
+    let lateMinites = Number(attendetAt.getMinutes()) - Number(fixedAttendTime.getMinutes());
+    let lateHours = Number(attendetAt.getHours()) - Number(fixedAttendTime.getHours());
+    debugger
+    if (lateHours < 0) {
+        return "0:0";
+    }
+    else {
+        return `${lateHours}:${lateMinites}`;
+    }
+}
+const empUsername = document.getElementById("username");
 
-attendBtn.addEventListener(('click'), (e) => {
+attend.addEventListener("click", function (e) {
     e.preventDefault();
-    let inputValue = attendInput.value;
-    let today = new Date()
-    for (let i = 0; i < userNames.length; i++) {
-        if (userNames[i] == inputValue) {
-            checkAttendance(inputValue, today);
-            console.log("this is valid data");
-            break;
-        } else {
-            e.preventDefault();
-            attendInput.focus();
-            console.log("this is invalid data");
 
-        }
-    }
-})
+    fetch(`http://localhost:3000/employees?username=${empUsername.value}`, {
+        method: "GET",
+        headers: { "Content-type": "application/JSON;charset=UTF-8" },
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.length === 1 && data[0].username === empUsername.value) {
+                let date = new Date();
+                let today = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+                let userId = data[0].id;
 
-//  attendanceEmployeeObject[0].info[0].date;
-
-async function checkAttendance(username, date) {
-    let attendanceEmployee = await fetch(`http://localhost:3000/attendence?username=${username}`);
-    let attendanceEmployeeObject = await attendanceEmployee.json();
-    let newInfo = attendanceEmployeeObject[0].info[attendanceEmployeeObject[0].info.length - 1];
-    console.log(newInfo)
-    if (newInfo.date == formatDate(date)) {
-        newInfo.out = time(date);
-        console.log(newInfo)
-        fetch(`http://localhost:3000/attendence/${attendanceEmployeeObject[0].id}`, {
-            method: "PATCH",
-            body: JSON.stringify({
-                info: `${newInfo}`
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                fetch(`http://localhost:3000/employees/${userId}/attendence?date=${today}`, {
+                    method: "GET",
+                    headers: { "Content-type": "application/JSON;charset=UTF-8" },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.length) {
+                            let hour = new Date().getHours();
+                            let mintues = new Date().getMinutes();
+                            let time = `${hour}:${mintues}`;
+                            fetch(`http://localhost:3000/attendence/${data[0].id}`, {
+                                method: "PATCH",
+                                headers: { "Content-type": "application/JSON;charset=UTF-8" },
+                                body: JSON.stringify({ out: time }),
+                            })
+                                .then((response) => response.json())
+                                .then((data) => { });
+                        } else {
+                            let latency = countLateTime();
+                            let hour = new Date().getHours();
+                            let mintues = new Date().getMinutes();
+                            let time = `${hour}:${mintues}`;
+                            console.log(time)
+                            let postBody = { in: time, out: 0, date: today, late: latency, absent: false };
+                            fetch(`http://localhost:3000/employees/${userId}/attendence`, {
+                                method: "POST",
+                                headers: { "Content-type": "application/JSON;charset=UTF-8" },
+                                body: JSON.stringify(postBody),
+                            }).then((response) => {
+                                return response.json();
+                            });
+                        }
+                    });
+            } else {
             }
-        })
+        });
+});
 
-    }
-}
-
-
-
-
-
-
-
-
-function formatDate(date) {
-    return date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-}
-
-
-function time(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
-    return (strTime);
-}

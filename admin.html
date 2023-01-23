@@ -22,16 +22,13 @@
             <div class="col-12 admin-reports reports">
                 <ul class="nav nav-tabs" id="reportsTabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active " id="monthly-tab" data-toggle="tab" href="#allemps" role="tab">All
-                            Employees</a>
+                        <a class="nav-link  " id="monthly-tab" data-toggle="tab" href="#candidates" role="tab">Candidates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="fullreport-tab" data-toggle="tab" href="#fullreport" role="tab">Full
-                            Report</a>
+                        <a class="nav-link " id="fullreport-tab" data-toggle="tab" href="#allemps" role="tab">All Employees</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="latereport-tab" data-toggle="tab" href="#latereport" role="tab">Late
-                            Report</a>
+                    <li class="nav-item ">
+                        <a class="nav-link active" id="latereport-tab" data-toggle="tab" href="#latereport" role="tab">Daily Report</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="absencereport-tab" data-toggle="tab" href="#absencereport"
@@ -55,45 +52,52 @@
                 </ul>
                 <div class="tab-content">
 
-                    <div class="tab-pane active" id="allemps" role="tabpanel" aria-labelledby="allemps-tab">
+                    <div class="tab-pane " id="pending" role="tabpanel" aria-labelledby="allemps-tab">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable" sort='name-asc'>Pending Names <i class="fas fa-chevron-down"></i></th>
+                                    <th>Email</th>
+                                    <th>Age</th>
+                                    <th>Position</th>
+                                    <th> Confirm</th>
+                                </tr>
+                            </thead>
+                            <tbody class="reportTBody" id="allpending">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane " id="fullreport" role="tabpanel" aria-labelledby="fullreport-tab">   
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th class="sortable" sort='name-asc'>Employee Name <i class="fas fa-chevron-down"></i></th>
-                                    <th>Attendance Admin</th>
+                                    <th class="sortable" sort='attend-asc'>Email<i class="fas fa-chevron-down"></i></th>
+                                    <th class="sortable" sort='late-asc'>Age <i class="fas fa-chevron-down"></i></th>
+                                    <th class="sortable" sort='absent-asc'>Role<i class="fas fa-chevron-down"></i></th>
+                                    <th class="sortable" sort='absent-asc'>Start Date<i class="fas fa-chevron-down"></i></th>
+
                                 </tr>
                             </thead>
-                            <tbody class="reportTBody" id="allempsRows">
+                            <tbody class="reportTBody" id="fullEmployeeReports">
 
                             </tbody>
                         </table>
                     </div>
-                    <div class="tab-pane" id="fullreport" role="tabpanel" aria-labelledby="fullreport-tab">
-                       
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="sortable" sort='name-asc'>Employee Name <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='attend-asc'>Attendance Times <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='late-asc'>Late Times <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='absent-asc'>Absent Times <i class="fas fa-chevron-down"></i></th>
-                                </tr>
-                            </thead>
-                            <tbody class="reportTBody" id="fullreportRows">
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="tab-pane" id="latereport" role="tabpanel" aria-labelledby="latereport-tab">
+                    <div class="tab-pane active " id="latereport" role="tabpanel" aria-labelledby="latereport-tab">
                         
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th class="sortable" sort='name-asc'>Employee Name <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='late-asc'>Late Times <i class="fas fa-chevron-down"></i></th>
+                                    <th class="sortable" sort='late-asc'>Late<i class="fas fa-chevron-down"></i></th>
+                                    <th class="sortable" sort='late-asc'>Absent<i class="fas fa-chevron-down"></i></th>
+                                    <th class="sortable" sort='late-asc'>Position<i class="fas fa-chevron-down"></i></th>
+
                                 </tr>
                             </thead>
-                            <tbody class="reportTBody" id="latereportRows">
+                            <tbody class="reportTBody" id="dailyReport">
 
                             </tbody>
                         </table>

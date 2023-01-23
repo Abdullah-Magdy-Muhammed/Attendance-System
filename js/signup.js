@@ -6,7 +6,7 @@ function setData() {
         lastName.value,
         address.value,
         mail.value,
-        age.value
+        age.value,
     );
     emp.SaveToJson();
 }
@@ -53,16 +53,16 @@ let allEmails = [];
 (async function mailExistence() {
     let employees = await fetch("http://localhost:3000/employees")
     let employeesobj = await employees.json();
-    let pending = await fetch("http://localhost:3000/pending")
-    let pendingObjects = await pending.json();
+    // let pending = await fetch("http://localhost:3000/pending")
+    // let pendingObjects = await pending.json();
     employeesobj.forEach(element => {
         allEmails.push(element.email)
     });
-    pendingObjects.forEach(element => {
-        allEmails.push(element.email)
-    });
+    // pendingObjects.forEach(element => {
+    //     allEmails.push(element.email)
+    // });
 })()
-console.log(allEmails)
+// console.log(allEmails)
 // email validation
 let mail = document.getElementById("mail");
 mail.addEventListener("blur", unquieValidMail); // end of email validation
@@ -116,3 +116,21 @@ empForm.addEventListener('submit', (e) => {
 
 
 
+function generateRandomName() {
+    let length = 7,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        retVal = "";
+    for (let i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
+function generateRandomPassword() {
+    let length = 8,
+        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        retVal = "";
+    for (let i = 0, n = charset.length; i < length; ++i) {
+        retVal += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return retVal;
+}
