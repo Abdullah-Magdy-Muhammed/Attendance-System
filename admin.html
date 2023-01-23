@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
     <!-- stylesheet libs-->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
@@ -11,150 +10,210 @@
     <link rel="stylesheet" href="../fontawesome/all.min.css" />
     <link rel="stylesheet" href="../css/daterangepicker.min.css" />
     <link rel="stylesheet" href="../css/admin.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container-fluid">
-        <div class="row p-3">
-            <h1 class="col-4">Admin Panel</h1>            
-        </div>
-        <div class="row p-3">
-            <div class="col-12 admin-reports reports">
-                <ul class="nav nav-tabs" id="reportsTabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link  " id="monthly-tab" data-toggle="tab" href="#candidates" role="tab">Candidates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " id="fullreport-tab" data-toggle="tab" href="#allemps" role="tab">All Employees</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active" id="latereport-tab" data-toggle="tab" href="#latereport" role="tab">Daily Report</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="absencereport-tab" data-toggle="tab" href="#absencereport"
-                            role="tab">Absence Report</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="requests-tab" data-toggle="tab" href="#requests" role="tab">
-                            Registration Requests <span id="reqNotifis"></span></a>
-                    </li>
-                    <li class="nav-item" style="margin-left: auto;">
-                        <form id="searchform" style="width:auto;">
-                            <input name="range" class="daterangepicker-field form-control d-inline" placeholder="Pick Date Range"
-                                    style="width: auto;" />
-                            <input name="query" class="form-control mr-sm-0"
-                                style="width:auto;display:inline-block;vertical-align: middle;" type="search"
-                                placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </li>
-                </ul>
-                <div class="tab-content">
+      <div class="row p-3">
+        <h1 class="col-4">Admin Panel</h1>
+      </div>
+      <div class="row p-3">
+        <div class="col-12 admin-reports reports">
+          <ul class="nav nav-tabs" id="reportsTabs" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="candidates"
+                data-toggle="tab"
+                href="#candidates"
+                role="tab"
+                >Candidates</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="fullreportbtn"
+                data-toggle="tab"
+                href="#allemps"
+                role="tab"
+                >All Employees</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="dailyreportbtn"
+                data-toggle="tab"
+                href="#dailyreport"
+                role="tab"
+                >Daily Report</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="monthlyreportbtn"
+                data-toggle="tab"
+                href="#monthlyreport"
+                role="tab"
+                >Monthly Report</a
+              >
+            </li>
 
-                    <div class="tab-pane " id="pending" role="tabpanel" aria-labelledby="allemps-tab">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="sortable" sort='name-asc'>Pending Names <i class="fas fa-chevron-down"></i></th>
-                                    <th>Email</th>
-                                    <th>Age</th>
-                                    <th>Position</th>
-                                    <th> Confirm</th>
-                                </tr>
-                            </thead>
-                            <tbody class="reportTBody" id="allpending">
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="tab-pane " id="fullreport" role="tabpanel" aria-labelledby="fullreport-tab">   
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="sortable" sort='name-asc'>Employee Name <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='attend-asc'>Email<i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='late-asc'>Age <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='absent-asc'>Role<i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='absent-asc'>Start Date<i class="fas fa-chevron-down"></i></th>
-
-                                </tr>
-                            </thead>
-                            <tbody class="reportTBody" id="fullEmployeeReports">
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="tab-pane active " id="latereport" role="tabpanel" aria-labelledby="latereport-tab">
-                        
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="sortable" sort='name-asc'>Employee Name <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='late-asc'>Late<i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='late-asc'>Absent<i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='late-asc'>Position<i class="fas fa-chevron-down"></i></th>
-
-                                </tr>
-                            </thead>
-                            <tbody class="reportTBody" id="dailyReport">
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="tab-pane" id="absencereport" role="tabpanel" aria-labelledby="absencereport-tab">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="sortable" sort='name-asc'>Employee Name <i class="fas fa-chevron-down"></i></th>
-                                    <th class="sortable" sort='absent-asc'>Absent Times</th>                                </tr>
-                            </thead>
-                            <tbody class="reportTBody" id="absencereportRows">
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="tab-pane" id="requests" role="tabpanel" aria-labelledby="requests-tab">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Employee Name</th>
-                                    <th>Request</th>
-                                </tr>
-                            </thead>
-                            <tbody class="reportTBody" id="requestsRows">
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
+            <li class="nav-item" style="margin-left: auto">
+              <form id="searchform" style="width: auto">
+                <input
+                  name="range"
+                  class="daterangepicker-field form-control d-inline"
+                  placeholder="Pick Date Range"
+                  style="width: auto"
+                />
+                <input
+                  name="query"
+                  class="form-control mr-sm-0"
+                  style="
+                    width: auto;
+                    display: inline-block;
+                    vertical-align: middle;
+                  "
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-danger my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div
+              class="tab-pane active"
+              id="pending"
+              role="tabpanel"
+              aria-labelledby="allemps-tab"
+            >
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="sortable" sort="name-asc">
+                      Pending Names <i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th>Confirm</th>
+                  </tr>
+                </thead>
+                <tbody class="reportTBody" id="allpending"></tbody>
+              </table>
             </div>
-        </div>
-        <div class="modal" id="alertmodal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title"></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn filled">Ok</button>
-                    </div>
-                </div>
+            <div
+              class="tab-pane"
+              id="fullreport"
+              role="tabpanel"
+              aria-labelledby="fullreport-tab"
+            >
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="sortable" sort="name-asc">
+                      Employee Name <i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="attend-asc">
+                      Email<i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="late-asc">
+                      Age <i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="absent-asc">
+                      Role<i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="absent-asc">
+                      Start Date<i class="fas fa-chevron-down"></i>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="reportTBody" id="fullEmployeeReports"></tbody>
+              </table>
             </div>
+            <div
+              class="tab-pane"
+              id="dailyreport"
+              role="tabpanel"
+              aria-labelledby="dailyreport-tab"
+            >
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="sortable" sort="name-asc">
+                      Employee Name <i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="late-asc">
+                      Late<i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="late-asc">
+                      Absent<i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="late-asc">
+                      Position<i class="fas fa-chevron-down"></i>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="reportTBody" id="dailyReport"></tbody>
+              </table>
+            </div>
+            <div
+              class="tab-pane"
+              id="monthlyreport"
+              role="tabpanel"
+              aria-labelledby="absencereport-tab"
+            >
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="sortable" sort="name-asc">
+                      Employee Name <i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable" sort="absent-asc">Absent Times</th>
+                  </tr>
+                </thead>
+                <tbody class="reportTBody" id="absencereportRows"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="modal" id="alertmodal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button type="button" class="btn filled">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!--js libs-->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../fontawesome/all.min.js"></script>
     <script src="../js/admin.js"></script>
-</body>
-
+  </body>
 </html>

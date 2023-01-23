@@ -14,19 +14,6 @@
       "startDate": "21-1-2023"
     },
     {
-      "id": 2,
-      "firstName": "ahmed",
-      "lastName": "hassan",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "ahmedhassanll@gmail.com",
-      "username": "SOxQwwP",
-      "password": "7nemYcer",
-      "age": "25",
-      "role": "0",
-      "accepted": false,
-      "startDate": "20-9-2022"
-    },
-    {
       "id": 3,
       "firstName": "mostafa",
       "lastName": "mohamed",
@@ -51,6 +38,71 @@
       "role": "1",
       "accepted": false,
       "startDate": "23-1-2023"
+    },
+    {
+      "id": 5,
+      "firstName": "ahmed",
+      "lastName": "moamen",
+      "address": "fayoum",
+      "email": "ahmedmoamen@gmail.com",
+      "username": "ehyjbtY",
+      "password": "daQXSrbY",
+      "age": "23",
+      "role": "0",
+      "accepted": false,
+      "startDate": "23-1-2023"
+    },
+    {
+      "id": 6,
+      "firstName": "hany",
+      "lastName": "nagy",
+      "address": "egypt,mansoura",
+      "email": "hanynagy@gmail.com",
+      "username": "BuVyQdY",
+      "password": "Rwtlsl4A",
+      "age": "45",
+      "role": "0",
+      "accepted": false,
+      "startDate": "23-1-2023"
+    },
+    {
+      "id": 7,
+      "firstName": "muhammed",
+      "lastName": "alaa",
+      "address": "mit-ghamr",
+      "email": "moalaa200@gmail.com",
+      "username": "sOXHXao",
+      "password": "Kj0t2w36",
+      "age": "22",
+      "role": "0",
+      "accepted": false,
+      "startDate": "23-1-2023"
+    },
+    {
+      "id": 8,
+      "firstName": "hend",
+      "lastName": "magdy",
+      "address": "cairo, egypt",
+      "email": "hendmagdy@gmail.com",
+      "username": "hHmKfiQ",
+      "password": "UNdL9SdW",
+      "age": "40",
+      "role": "0",
+      "accepted": false,
+      "startDate": "23-1-2023"
+    },
+    {
+      "id": 9,
+      "firstName": "essam",
+      "lastName": "magdy",
+      "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
+      "email": "essam200@gmail.com",
+      "username": "UIJkSCo",
+      "password": "rjNo6K5J",
+      "age": "59",
+      "role": "0",
+      "accepted": false,
+      "startDate": "23-1-2023"
     }
   ],
   "attendence": [
@@ -62,15 +114,6 @@
       "absent": false,
       "employeeId": "1",
       "id": 1
-    },
-    {
-      "in": "2:32",
-      "out": "7:45",
-      "date": "23-1-2023",
-      "late": "11:32",
-      "absent": false,
-      "employeeId": "2",
-      "id": 2
     },
     {
       "in": "4:36",
