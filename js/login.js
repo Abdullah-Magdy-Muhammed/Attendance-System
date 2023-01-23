@@ -9,12 +9,14 @@ async function CheckUsernameAndPassword() {
     if (empDataObject.length == 0) {
         alert("Please Check your username and password and try again")
     }
-    else if (empDataObject[0].role == "admin") {
-        alert("this is Admin ")
-    } else if (empDataObject[0].role == "employee") {
-        alert("this is employee")
-        // location.href("")
-
+    // guide you to admin panel
+    else if (empDataObject[0].role == 2) {
+        window.open("../admin.html", "_blank");
+    } else if (empDataObject[0].role == 1) {
+        window.open("../attendance.html", "_blank");
+    }
+    else if (empDataObject[0].role == 0) {
+        window.open("../profile.html", "_blank");
     }
     else {
         alert("this username is not valid")

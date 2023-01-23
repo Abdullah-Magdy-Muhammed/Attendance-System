@@ -2,15 +2,15 @@
 let fixedAttendTime = new Date();
 fixedAttendTime.setHours(9);
 fixedAttendTime.setMinutes(0);
-// console.log(fixedAttendTime)
+// console.log(fixedAttendTime.getHours())
 
 function countLateTime() {
     let attendetAt = new Date();
 
     let lateMinites = Number(attendetAt.getMinutes()) - Number(fixedAttendTime.getMinutes());
     let lateHours = Number(attendetAt.getHours()) - Number(fixedAttendTime.getHours());
-    debugger
     if (lateHours < 0) {
+
         return "0:0";
     }
     else {
@@ -52,6 +52,8 @@ attend.addEventListener("click", function (e) {
                                 .then((data) => { });
                         } else {
                             let latency = countLateTime();
+                            console.log(countLateTime())
+
                             let hour = new Date().getHours();
                             let mintues = new Date().getMinutes();
                             let time = `${hour}:${mintues}`;

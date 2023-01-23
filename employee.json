@@ -9,7 +9,7 @@
       "username": "ZVwZNQz",
       "password": "27QNpaYE",
       "age": "23",
-      "role": "0",
+      "role": "2",
       "accepted": true,
       "startDate": "21-1-2023"
     },
@@ -22,15 +22,41 @@
       "username": "SOxQwwP",
       "password": "7nemYcer",
       "age": "25",
-      "role": "1",
+      "role": "0",
       "accepted": false,
       "startDate": "20-9-2022"
+    },
+    {
+      "id": 3,
+      "firstName": "mostafa",
+      "lastName": "mohamed",
+      "address": "الزقازيق",
+      "email": "mostafamohamed@gmail.com",
+      "username": "JcqHYly",
+      "password": "UO0ysZQI",
+      "age": "26",
+      "role": "0",
+      "accepted": false,
+      "startDate": "23-1-2023"
+    },
+    {
+      "id": 4,
+      "firstName": "mansour",
+      "lastName": "mahmoud",
+      "address": "المنصوره-شارع الجيش ",
+      "email": "mansourmahmoud@gamil.com",
+      "username": "ISjWgQd",
+      "password": "CsfBNiMo",
+      "age": "42",
+      "role": "1",
+      "accepted": false,
+      "startDate": "23-1-2023"
     }
   ],
   "attendence": [
     {
       "in": "2:31",
-      "out": 0,
+      "out": "7:50",
       "date": "23-1-2023",
       "late": "0:0",
       "absent": false,
@@ -39,12 +65,30 @@
     },
     {
       "in": "2:32",
-      "out": "2:49",
+      "out": "7:45",
       "date": "23-1-2023",
       "late": "11:32",
       "absent": false,
       "employeeId": "2",
       "id": 2
+    },
+    {
+      "in": "4:36",
+      "out": "7:51",
+      "date": "23-1-2023",
+      "late": "0:0",
+      "absent": false,
+      "employeeId": "3",
+      "id": 3
+    },
+    {
+      "in": "7:52",
+      "out": 0,
+      "date": "23-1-2023",
+      "late": "16:52",
+      "absent": false,
+      "employeeId": "4",
+      "id": 4
     }
   ]
 }

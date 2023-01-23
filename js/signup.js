@@ -101,7 +101,6 @@ empForm.addEventListener('submit', (e) => {
         unquieValidMail()
 
     ) {
-        alert("we gonna add")
         setData();
 
     } else {

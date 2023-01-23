@@ -1,5 +1,8 @@
 // function to controll flow of admin panel 
 // function changeDisplayedTable()
+
+let allemp;
+let allAttendence;
 let navBar = document.getElementById("reportsTabs")
 
 navBar.addEventListener("click", (e) => {
@@ -34,9 +37,9 @@ fetch("http://localhost:3000/employees?accepted=false", {
             tr.appendChild(age);
 
             let postition = document.createElement("td");
-            if (data[i] == 0) {
+            if (data[i].role == 0) {
                 postition.innerText = "Employee"
-            } else if (data[i] == 1) {
+            } else if (data[i].role == 1) {
                 postition.innerText = "Secuirty"
             } else {
                 postition.innerText = "Admin"
@@ -56,6 +59,8 @@ fetch("http://localhost:3000/employees", {
 })
     .then((response) => response.json())
     .then((data) => {
+
+
         for (let i = 0; i < data.length; i++) {
             let tr = document.createElement("tr");
             fullEmployeeReport.appendChild(tr);
@@ -73,9 +78,9 @@ fetch("http://localhost:3000/employees", {
             tr.appendChild(age);
 
             let postition = document.createElement("td");
-            if (data[i] == 0) {
+            if (data[i].role == 0) {
                 postition.innerText = "Employee"
-            } else if (data[i] == 1) {
+            } else if (data[i].role == 1) {
                 postition.innerText = "Secuirty"
             } else {
                 postition.innerText = "Admin"
@@ -90,37 +95,103 @@ fetch("http://localhost:3000/employees", {
 
 // Daily Report
 dailyReport = document.getElementById("dailyReport");
-fetch("http://localhost:3000/employees", {
+
+const empUsername = document.getElementById("username");
+
+
+fetch(`http://localhost:3000/employees`, {
     method: "GET",
+    headers: { "Content-type": "application/JSON;charset=UTF-8" },
 })
     .then((response) => response.json())
     .then((data) => {
-        for (let i = 0; i < data.length; i++) {
-            let tr = document.createElement("tr");
-            dailyReport.appendChild(tr);
+        allemp = data;
+        console.log(allemp);
+        userId = allemp[0].id
+        let date = new Date();
+        let today = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 
-            let empName = document.createElement("td");
-            empName.innerText = `${data[i].firstName} ${data[i].lastName}`;
-            tr.appendChild(empName);
+        fetch(`http://localhost:3000/attendence?date=${today}`, {
+            method: "GET",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                allAttendence = data;
+                console.log(allAttendence)
+                debugger
+                allemp.forEach((emp) => {
+                    let tr = document.createElement("tr");
+                    for (let i = 0; i < allAttendence.length; i++) {
+                        if (emp.id == allAttendence[i].employeeId) {
 
-            let late = document.createElement("td");
-            late.innerText = data[i].late;
-            tr.appendChild(email);
+                            let empName = document.createElement("td");
+                            empName.innerText = `${emp.firstName} ${emp.lastName}`;
+                            tr.appendChild(empName);
 
-            let absent = document.createElement("td");
-            absent.innerText = data[i].absent;
-            tr.appendChild(absent);
+                            let late = document.createElement("td");
+                            late.innerText = allAttendence[i].late;
+                            tr.appendChild(late);
 
-            let postition = document.createElement("td");
-            if (data[i] == 0) {
-                postition.innerText = "Employee"
-            } else if (data[i] == 1) {
-                postition.innerText = "Secuirty"
-            } else {
-                postition.innerText = "Admin"
-            }
-            tr.appendChild(postition)
-        }
-    })
+                            let absent = document.createElement("td");
+                            if (allAttendence[i].absent) {
+                                absent.innerText = "Absent"
+                            } else {
+                                absent.innerText = "Attend"
+                            }
+                            tr.appendChild(absent);
+
+                            let postition = document.createElement("td");
+                            if (emp.role == 0) {
+                                postition.innerText = "Employee"
+                            } else if (emp.role == 1) {
+                                postition.innerText = "Secuirty"
+                            } else {
+                                postition.innerText = "Admin"
+                            }
+                            tr.appendChild(postition)
+                        }
+                    }
+                    dailyReport.appendChild(tr);
+                })
+
+                // for (let i = 0; i < data.length; i++) {
+                //     let tr = document.createElement("tr");
+                //     dailyReport.appendChild(tr);
+
+                //     let empName = document.createElement("td");
+                //     empName.innerText = `${data[i].firstName} ${data[i].lastName}`;
+                //     tr.appendChild(empName);
+
+                //     let late = document.createElement("td");
+                //     late.innerText = data[i].late;
+                //     tr.appendChild(late);
+
+                //     let absent = document.createElement("td");
+                //     absent.innerText = data[i].absent;
+                //     tr.appendChild(absent);
+
+                //     let postition = document.createElement("td");
+                //     if (data[i].role == 0) {
+                //         postition.innerText = "Employee"
+                //     } else if (data[i].role == 1) {
+                //         postition.innerText = "Secuirty"
+                //     } else {
+                //         postition.innerText = "Admin"
+                //     }
+                //     tr.appendChild(postition)
+                // }
+            })
+
+    });
+
+
+
+
+
+
+
+
+
+
 
 
