@@ -13,6 +13,8 @@
 
     ```md
     ![alt text](./img/login.png)
+    ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
     ```
 
 
