@@ -74,8 +74,8 @@
       "username": "sOXHXao",
       "password": "Kj0t2w36",
       "age": "22",
-      "role": "0",
-      "accepted": false,
+      "role": "Select Employee Role",
+      "accepted": true,
       "startDate": "23-1-2023"
     },
     {
@@ -88,7 +88,7 @@
       "password": "UNdL9SdW",
       "age": "40",
       "role": "0",
-      "accepted": true,
+      "accepted": false,
       "startDate": "23-1-2023"
     },
     {
@@ -114,15 +114,6 @@
       "absent": false,
       "employeeId": "9",
       "id": 1
-    },
-    {
-      "in": "15:50",
-      "out": 0,
-      "date": "24-1-2023",
-      "late": "7:20",
-      "absent": false,
-      "employeeId": "7",
-      "id": 2
     }
   ]
 }

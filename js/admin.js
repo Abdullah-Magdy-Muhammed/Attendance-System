@@ -1,3 +1,6 @@
+// function to send email
+
+
 function searchFunction() {
     var input, filter, table, tr, td, i, alltables;
     alltables = document.querySelectorAll("table[data-name=table]");
@@ -147,8 +150,19 @@ fetch("http://localhost:3000/employees?accepted=false", {
                 let selectTage = document.getElementById(`choose-${data[i].id}`);
                 let selectedValue = document.getElementById(`choose-${data[i].id}`).value;
 
+
                 let row = e.target.parentElement.parentElement;
                 if (window.confirm("Are You Sure to accept this employee")) {
+                    // send email provided by username and password for employee 
+                    Email.send({
+                        SecureToken: "e428e1de-2ff9-4bc1-a181-902c34a503b5",
+                        To: `${data[i].email}`,
+                        From: "abdullahmagdy786@gmail.com",
+                        Subject: "This is the subject",
+                        Body: `Your Username is ${data[i].username}and password is ${data[i].password}`
+                    }).then(
+                        message => alert(message)
+                    );
 
                     fetch(`http://localhost:3000/employees/${data[i].id}`, {
                         method: "PATCH",
@@ -264,7 +278,6 @@ fetch(`http://localhost:3000/employees`, {
 // Monthly Report
 
 let d = new Date(document.getElementById("range"));
-console.log(d.getMonth())
 monthlyReportBody = document.getElementById("monthlyReport");
 fetch(`http://localhost:3000/employees`, {
     method: "GET",
