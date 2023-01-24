@@ -12,7 +12,7 @@
 ## Usage
 
     ```md
-    ![alt text](./img/login.png)
+![1](https://user-images.githubusercontent.com/56775516/214205431-2fdd4cb5-7c76-4b91-b969-50fa20537f14.png)
 
     ```    
     ![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
