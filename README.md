@@ -25,7 +25,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 ## Usage
 
     ```md
-    ![alt text](../img/login.png)
+    ![alt text](./img/login.png)
     ```
 
 ## Credits
