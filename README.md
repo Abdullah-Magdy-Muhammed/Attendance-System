@@ -3,12 +3,11 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+- I'm seeking to create attendance system for employee 
+- This project teaches me a lot and I gained huge knowledge  
+- Problem of how to deal with json (get - post - patch - delete) 
+- How to deal with json file, promises in js, responsive layout, js validation and how to think in project
 
 ## Table of Contents (Optional)
 
