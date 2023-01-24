@@ -243,9 +243,67 @@ fetch(`http://localhost:3000/employees`, {
     });
 
 // Monthly Report
+
+let d = new Date(document.getElementById("range"));
+console.log(d.getMonth())
 monthlyReportBody = document.getElementById("monthlyReport");
+fetch(`http://localhost:3000/employees`, {
+    method: "GET",
+    headers: { "Content-type": "application/JSON;charset=UTF-8" },
+})
+    .then((response) => response.json())
+    .then((data) => {
+        allemp = data;
+        userId = allemp[0].id
+        let date = new Date();
+        let today = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 
+        fetch(`http://localhost:3000/attendence?date=${today}`, {
+            method: "GET",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                allAttendence = data;
+                allemp.forEach((emp) => {
+                    let tr = document.createElement("tr");
+                    for (let i = 0; i < allAttendence.length; i++) {
+                        if (emp.id == allAttendence[i].employeeId) {
 
+                            let empName = document.createElement("td");
+                            empName.innerText = `${emp.firstName} ${emp.lastName}`;
+                            tr.appendChild(empName);
+
+                            let late = document.createElement("td");
+                            let numOfLate = 0;
+                            if (allAttendence[i].late != "00:00") {
+                                numOfLate++;
+                            }
+                            late.innerText = `${numOfLate}`;
+                            tr.appendChild(late);
+
+                            let absent = document.createElement("td");
+                            if (allAttendence[i].absent) {
+                                absent.innerText = "Absent"
+                            } else {
+                                absent.innerText = "Attend"
+                            }
+                            tr.appendChild(absent);
+
+                            let postition = document.createElement("td");
+                            if (emp.role == 0) {
+                                postition.innerText = "Employee"
+                            } else if (emp.role == 1) {
+                                postition.innerText = "Secuirty"
+                            } else {
+                                postition.innerText = "Admin"
+                            }
+                            tr.appendChild(postition)
+                        }
+                    }
+                    monthlyReportBody.appendChild(tr);
+                })
+            })
+    });
 
 
 

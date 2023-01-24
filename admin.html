@@ -12,7 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/daterangepicker.min.css" />
     <link rel="stylesheet" href="../css/admin.css" />
   </head>
 
@@ -68,7 +67,8 @@
             <li class="nav-item" style="margin-left: auto">
               <form id="searchform" style="width: auto">
                 <input
-                  name="range"
+                  type="date"
+                  id="range"
                   class="daterangepicker-field form-control d-inline"
                   placeholder="Pick Date Range"
                   style="width: auto"
@@ -182,10 +182,17 @@
               <table class="table" data-name="table">
                 <thead>
                   <tr>
-                    <th class="sortable" sort="name-asc">
+                    <th class="sortable">
                       Employee Name <i class="fas fa-chevron-down"></i>
                     </th>
-                    <th class="sortable" sort="absent-asc">Absent Times</th>
+                    <th class="sortable">Number Of Absent Days</th>
+                    <th class="sortable">
+                      Number Of Attend Days <i class="fas fa-chevron-down"></i>
+                    </th>
+                    <th class="sortable">Number Of Late Days</th>
+                    <th class="sortable">
+                      Start Day <i class="fas fa-chevron-down"></i>
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="reportTBody" id="monthlyReport"></tbody>
