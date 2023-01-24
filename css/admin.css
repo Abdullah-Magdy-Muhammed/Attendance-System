@@ -3,6 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 17px;
+}
 thead,
 .nav-link {
   color: red;
@@ -11,5 +15,10 @@ thead,
   color: rgb(73, 80, 87);
 }
 h1 {
-  text-shadow: 5px 2px 5px red;
+  color: #cd9a9a;
+  text-shadow: 2px 2px 2px #c41515;
+}
+table tr:hover {
+  background-color: #cd9a9a;
+  color: white;
 }
