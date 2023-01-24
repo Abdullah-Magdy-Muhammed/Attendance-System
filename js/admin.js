@@ -106,11 +106,25 @@ fetch("http://localhost:3000/employees?accepted=false", {
                 postition.innerText = "Admin"
             }
             tr.appendChild(postition)
+            // Admin Choose Role of Empolyee
+            let role = document.createElement("td");
+            role.innerHTML = `
+                                <select id='choose-${data[i].id}' class="form-select" aria-label="Default select example">
+                                <option selected>Select Employee Role</option>
+                                <option value="0">Employee</option>
+                                <option value="1">Secuirty</option>
+                                <option value="2">Admin</option>
+                                </select>
+                            `
+            tr.appendChild(role)
+
+
+            // admin accept the pending people
             let confirm = document.createElement("td");
             confirm.innerHTML = `<button id='accept-${data[i].id}' class='btn-light px-2'>&check;</button> <button id= 'delete-${data[i].id}' class='btn-danger px-2'>X</button>`
             tr.appendChild(confirm);
 
-            // confirm and delete
+            // admin refuse the pending people
             let deleteBtn = document.getElementById(`delete-${data[i].id}`)
             deleteBtn.addEventListener("click", (e) => {
                 let row = e.target.parentElement.parentElement;
@@ -127,18 +141,23 @@ fetch("http://localhost:3000/employees?accepted=false", {
                         })
                 }
             })
+
             let confirmBbtn = document.getElementById(`accept-${data[i].id}`)
             confirmBbtn.addEventListener("click", (e) => {
+                let selectTage = document.getElementById(`choose-${data[i].id}`);
+                let selectedValue = document.getElementById(`choose-${data[i].id}`).value;
+
                 let row = e.target.parentElement.parentElement;
                 if (window.confirm("Are You Sure to accept this employee")) {
 
                     fetch(`http://localhost:3000/employees/${data[i].id}`, {
                         method: "PATCH",
                         headers: { "Content-type": "application/JSON;charset=UTF-8" },
-                        body: JSON.stringify({ accepted: true })
+                        body: JSON.stringify({ accepted: true, role: selectedValue })
                     })
                         .then((response) => response.json())
                         .then((data) => {
+
                             row.remove();
                         })
                 }
@@ -273,21 +292,21 @@ fetch(`http://localhost:3000/employees`, {
                             empName.innerText = `${emp.firstName} ${emp.lastName}`;
                             tr.appendChild(empName);
 
-                            let late = document.createElement("td");
-                            let numOfLate = 0;
-                            if (allAttendence[i].late != "00:00") {
-                                numOfLate++;
-                            }
-                            late.innerText = `${numOfLate}`;
-                            tr.appendChild(late);
-
                             let absent = document.createElement("td");
-                            if (allAttendence[i].absent) {
-                                absent.innerText = "Absent"
-                            } else {
-                                absent.innerText = "Attend"
+                            let numOfAbsent = 0;
+                            if (allAttendence[i].absent == true) {
+                                numOfAbsent++;
                             }
+                            absent.innerText = `${numOfAbsent}`;
                             tr.appendChild(absent);
+
+
+                            let attend = document.createElement("td");
+                            let numOfAttend = 0;
+                            if (allAttendence[i].absent == false) {
+                                numOfAttend++;
+                            }
+                            tr.appendChild(attend);
 
                             let postition = document.createElement("td");
                             if (emp.role == 0) {
