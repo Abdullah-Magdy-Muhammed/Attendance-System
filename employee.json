@@ -107,22 +107,13 @@
   ],
   "attendence": [
     {
-      "in": "1:19",
+      "in": "5:42",
       "out": 0,
       "date": "24-1-2023",
       "late": "00:00",
       "absent": false,
       "employeeId": "9",
       "id": 1
-    },
-    {
-      "in": "1:20",
-      "out": 0,
-      "date": "24-1-2023",
-      "late": "00:00",
-      "absent": false,
-      "employeeId": "3",
-      "id": 2
     }
   ]
 }

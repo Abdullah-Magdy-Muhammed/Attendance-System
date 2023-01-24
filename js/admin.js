@@ -36,7 +36,7 @@ allEmployeesBtn.addEventListener("click", (e) => {
     dailyReportBtn.classList.remove("active");
     monthlyReportBtn.classList.remove("active");
     pendingReport.classList.remove("active");
-    document.getElementById("dailyreport").classList.remove("active");
+    dailyReport.classList.remove("active");
     monthlyReport.classList.remove("active");
     e.target.classList.add("active");
     fullReport.classList.add("active");
@@ -49,7 +49,7 @@ dailyReportBtn.addEventListener("click", (e) => {
     monthlyReport.classList.remove("active");
     fullReport.classList.remove("active");
     e.target.classList.add("active");
-    document.getElementById("dailyreport").classList.add("active")
+    dailyReport.classList.add("active")
 
 })
 
@@ -58,7 +58,7 @@ monthlyReportBtn.addEventListener("click", (e) => {
     dailyReportBtn.classList.remove("active");
     allEmployeesBtn.classList.remove("active");
     pendingReport.classList.remove("active");
-    document.getElementById("dailyreport").classList.remove("active");
+    dailyReport.classList.remove("active");
     fullReport.classList.remove("active");
     e.target.classList.add("active");
     monthlyReport.classList.add("active");
@@ -69,7 +69,7 @@ pendingBtn.addEventListener("click", (e) => {
     dailyReportBtn.classList.remove("active");
     monthlyReport.classList.remove("active");
     fullReport.classList.remove("active");
-    document.getElementById("dailyreport").classList.remove("active");
+    dailyReport.classList.remove("active");
     e.target.classList.add("active");
     pendingReport.classList.add("active");
 })
@@ -186,7 +186,7 @@ fetch("http://localhost:3000/employees", {
     })
 
 // Daily Report
-dailyReport = document.getElementById("dailyReport");
+dailyReportBody = document.getElementById("dailyReport");
 const empUsername = document.getElementById("username");
 fetch(`http://localhost:3000/employees`, {
     method: "GET",
@@ -237,11 +237,13 @@ fetch(`http://localhost:3000/employees`, {
                             tr.appendChild(postition)
                         }
                     }
-                    dailyReport.appendChild(tr);
+                    dailyReportBody.appendChild(tr);
                 })
             })
     });
 
+// Monthly Report
+monthlyReportBody = document.getElementById("monthlyReport");
 
 
 
