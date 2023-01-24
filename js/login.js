@@ -11,12 +11,13 @@ async function CheckUsernameAndPassword() {
     }
     // guide you to admin panel
     else if (empDataObject[0].role == 2) {
-        window.open("../admin.html", "_blank");
+        window.open("../admin.html");
     } else if (empDataObject[0].role == 1) {
         window.open("../attendance.html", "_blank");
     }
     else if (empDataObject[0].role == 0) {
-        window.open("../profile.html", "_blank");
+        window.localStorage.setItem("username", usernameValue);
+        window.open("../profile.html");
     }
     else {
         alert("this username is not valid")
