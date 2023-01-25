@@ -15,9 +15,10 @@ body {
   margin-top: 22px;
 }
 .btn {
-  color: red;
+  color: rgb(197, 10, 10);
   width: 500px;
   border-radius: 10px;
+  padding: 5px 0;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -25,7 +26,8 @@ body {
 }
 .btn:hover {
   color: white;
-  background-color: red;
+  background-color: rgb(197, 10, 10);
+  border: none;
 }
 main h1 {
   text-align: center;
@@ -44,5 +46,10 @@ main h1 {
   }
   .btn {
     width: 200px;
+  }
+  main h1 {
+    color: rgb(197, 10, 10);
+    text-shadow: 10px 5px 5px rgb(0, 0, 0);
+    margin-top: 20vh;
   }
 }

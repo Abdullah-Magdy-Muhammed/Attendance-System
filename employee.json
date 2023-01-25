@@ -123,6 +123,15 @@
       "absent": false,
       "employeeId": "9",
       "id": 2
+    },
+    {
+      "in": "6:38",
+      "out": "6:38",
+      "date": "25-1-2023",
+      "late": "00:00",
+      "absent": false,
+      "employeeId": "3",
+      "id": 3
     }
   ]
 }
