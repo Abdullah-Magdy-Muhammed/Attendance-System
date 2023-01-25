@@ -18,7 +18,11 @@ fetch(`http://localhost:3000/employees?username=${username}`, {
         console.log(data[0]) // array of object of every employee
         fullName.innerText = `${data[0].firstName} ${data[0].lastName}`;
         headName.innerText = `${data[0].firstName} ${data[0].lastName}`;
-        position.innerText = `${data[0].role}`;
+        if (data[0].role == 0) {
+            position.innerText = `Employee`;
+        } else {
+            position.innerText = `Secuirty`;
+        }
         address.innerText = `${data[0].address}`;
         headAddress.innerText = `${data[0].address}`;
         email.innerText = `${data[0].email}`;
@@ -64,3 +68,11 @@ fetch(`http://localhost:3000/employees?username=${username}`, {
                 });
             });
     });
+
+let logout = document.getElementById("logout");
+logout.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (confirm("Are you sure you logout!")) {
+        window.open("../login.html");
+    }
+})

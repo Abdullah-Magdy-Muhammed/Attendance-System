@@ -69,7 +69,14 @@
               <form id="searchform" style="width: auto">
                 <input
                   type="date"
-                  id="range"
+                  id="startrange"
+                  class="daterangepicker-field form-control d-inline"
+                  placeholder="Pick Date Range"
+                  style="width: auto"
+                />
+                <input
+                  type="date"
+                  id="endrange"
                   class="daterangepicker-field form-control d-inline"
                   placeholder="Pick Date Range"
                   style="width: auto"
@@ -85,14 +92,15 @@
                     vertical-align: middle;
                   "
                   type="search"
-                  placeholder="Search"
+                  placeholder="Search By Name"
                   aria-label="Search"
                 />
                 <button
                   class="btn btn-outline-danger my-2 my-sm-0"
                   type="submit"
+                  id="logout"
                 >
-                  Search
+                  Logout
                 </button>
               </form>
             </li>

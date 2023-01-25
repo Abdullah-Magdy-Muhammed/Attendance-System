@@ -277,8 +277,11 @@ fetch(`http://localhost:3000/employees`, {
 
 // Monthly Report
 
-let d = new Date(document.getElementById("range"));
+let start = new Date(document.getElementById("startrange"));
+let end = new Date(document.getElementById("endrange"));
+
 monthlyReportBody = document.getElementById("monthlyReport");
+
 fetch(`http://localhost:3000/employees`, {
     method: "GET",
     headers: { "Content-type": "application/JSON;charset=UTF-8" },
@@ -286,7 +289,8 @@ fetch(`http://localhost:3000/employees`, {
     .then((response) => response.json())
     .then((data) => {
         allemp = data;
-        userId = allemp[0].id
+
+
         let date = new Date();
         let today = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
 
@@ -321,22 +325,28 @@ fetch(`http://localhost:3000/employees`, {
                             }
                             tr.appendChild(attend);
 
-                            let postition = document.createElement("td");
-                            if (emp.role == 0) {
-                                postition.innerText = "Employee"
-                            } else if (emp.role == 1) {
-                                postition.innerText = "Secuirty"
-                            } else {
-                                postition.innerText = "Admin"
+                            let numberOfLateDays = document.createElement("td");
+                            let numOfLateDays = 0
+                            if (allAttendence[i].in > "8:30") {
+                                numOfLateDays++;
                             }
-                            tr.appendChild(postition)
+                            tr.appendChild(numberOfLateDays);
+                            let startDate = document.createElement("td");
+                            startDate.innerText = `${emp.startDate}`
+                            tr.appendChild(startDate)
                         }
                     }
                     monthlyReportBody.appendChild(tr);
                 })
             })
     });
-
+let logout = document.getElementById("logout");
+logout.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (confirm("Are you sure you logout!")) {
+        window.open("../login.html");
+    }
+})
 
 
 

@@ -168,32 +168,6 @@
       "role": "0",
       "accepted": false,
       "startDate": "25-1-2023"
-    },
-    {
-      "id": 15,
-      "firstName": "sherif",
-      "lastName": "muhammed",
-      "address": "mansoura,Egypt",
-      "email": "sherifmuhammed1998@gmail.com",
-      "username": "pQSVcjC",
-      "password": "UvamyCnQ",
-      "age": "26",
-      "role": "0",
-      "accepted": false,
-      "startDate": "25-1-2023"
-    },
-    {
-      "id": 16,
-      "firstName": "abdelrahman",
-      "lastName": "auf",
-      "address": "mansoura, Egypt",
-      "email": "abdelrahmanauf2000@gmail.com",
-      "username": "oZvVHEn",
-      "password": "29wh5WMo",
-      "age": "23",
-      "role": "0",
-      "accepted": false,
-      "startDate": "25-1-2023"
     }
   ],
   "attendence": [
