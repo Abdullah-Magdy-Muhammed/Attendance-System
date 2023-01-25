@@ -11,13 +11,12 @@
 
 ## Usage
 
-![1](https://user-images.githubusercontent.com/56775516/214206120-b0353f54-b386-4aa7-831f-c46e8cbefcd5.png)
-![2](https://user-images.githubusercontent.com/56775516/214206244-2b7761be-4bab-4146-9772-cfb4fb17a405.png)
-![3](https://user-images.githubusercontent.com/56775516/214353815-567a2b9b-2cce-472a-bb1a-6f98774a882d.png)
-![4](https://user-images.githubusercontent.com/56775516/214353191-6f9fc497-88c6-47e6-bde2-5417a6210bc2.png)
-![5](https://user-images.githubusercontent.com/56775516/214476455-5b9e0ef6-6f60-4b95-9701-59e4a069e179.png)
-
-  
+![1](https://user-images.githubusercontent.com/56775516/214561276-1cbc44af-ec92-4fe0-955e-773be6229967.png)
+![2](https://user-images.githubusercontent.com/56775516/214206120-b0353f54-b386-4aa7-831f-c46e8cbefcd5.png)
+![3](https://user-images.githubusercontent.com/56775516/214206244-2b7761be-4bab-4146-9772-cfb4fb17a405.png)
+![4](https://user-images.githubusercontent.com/56775516/214560454-4d03e2af-4791-4d51-96ad-61530b2eb592.png)
+![5](https://user-images.githubusercontent.com/56775516/214560110-42ea1510-8f52-4b58-bc31-df68debf2748.png)
+![6](https://user-images.githubusercontent.com/56775516/214561493-4ebd4398-251a-4e52-971c-7161227bc624.png)
 
 
 ## Badges
