@@ -74,8 +74,8 @@
       "username": "sOXHXao",
       "password": "Kj0t2w36",
       "age": "22",
-      "role": "Select Employee Role",
-      "accepted": true,
+      "role": "0",
+      "accepted": false,
       "startDate": "23-1-2023"
     },
     {
@@ -103,6 +103,58 @@
       "role": "0",
       "accepted": false,
       "startDate": "23-1-2023"
+    },
+    {
+      "id": 10,
+      "firstName": "mahy",
+      "lastName": "ayman",
+      "address": "المنصوره-مدينه الزهراء بجانب كوبري المرور ",
+      "email": "mahyayman10@gmail.com",
+      "username": "soPiHuv",
+      "password": "kKAZuqBh",
+      "age": "26",
+      "role": "0",
+      "accepted": false,
+      "startDate": "25-1-2023"
+    },
+    {
+      "id": 11,
+      "firstName": "mostafa",
+      "lastName": "yasser",
+      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
+      "email": "mostafayasser@gmail.com",
+      "username": "gndKvbS",
+      "password": "LugNHDCy",
+      "age": "27",
+      "role": "0",
+      "accepted": false,
+      "startDate": "25-1-2023"
+    },
+    {
+      "id": 12,
+      "firstName": "ahmed",
+      "lastName": "abdelnaser",
+      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
+      "email": "ahmedabdelnaser@gmail.com",
+      "username": "ECTWySr",
+      "password": "7zWuuczY",
+      "age": "29",
+      "role": "0",
+      "accepted": false,
+      "startDate": "25-1-2023"
+    },
+    {
+      "id": 13,
+      "firstName": "kareem",
+      "lastName": "elshahawy",
+      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
+      "email": "kareemelshhawy@gmail.com",
+      "username": "ISYHijg",
+      "password": "CtZ9GSUa",
+      "age": "25",
+      "role": "0",
+      "accepted": false,
+      "startDate": "25-1-2023"
     }
   ],
   "attendence": [

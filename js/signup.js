@@ -13,7 +13,7 @@ function setData() {
 
 // names validation
 function isUserNameValide(name) {
-    var usernamepattern = /^[a-zA-Z]{4,8}$/;
+    var usernamepattern = /^[a-zA-Z]{3,15}$/;
     return name.match(usernamepattern);
 }
 let firstName = document.getElementsByClassName('firstName')[0];
