@@ -129,45 +129,6 @@
       "role": "0",
       "accepted": false,
       "startDate": "25-1-2023"
-    },
-    {
-      "id": 12,
-      "firstName": "ahmed",
-      "lastName": "shehata",
-      "address": "mansoura, Eldakhlia , Egypt",
-      "email": "ahmedshehata1999@gmail.com",
-      "username": "LEUjMSO",
-      "password": "W1DsHXuW",
-      "age": "25",
-      "role": "0",
-      "accepted": false,
-      "startDate": "25-1-2023"
-    },
-    {
-      "id": 13,
-      "firstName": "magdy",
-      "lastName": "muhammed",
-      "address": "المنصوره-5شارع عبدالغني المتفرع من صلاح الدين الايوبي -الاتوبيس القديم",
-      "email": "magdymuhammed1956@gmail.com",
-      "username": "iPqzEmK",
-      "password": "OyA7qD53",
-      "age": "60",
-      "role": "0",
-      "accepted": false,
-      "startDate": "25-1-2023"
-    },
-    {
-      "id": 14,
-      "firstName": "omar",
-      "lastName": "khaled",
-      "address": "mansoura, Egypt",
-      "email": "omarkhaled2002@gmail.com",
-      "username": "EeCQpMm",
-      "password": "XPo8LPAk",
-      "age": "21",
-      "role": "0",
-      "accepted": false,
-      "startDate": "25-1-2023"
     }
   ],
   "attendence": [
