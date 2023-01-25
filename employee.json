@@ -88,7 +88,7 @@
       "password": "UNdL9SdW",
       "age": "40",
       "role": "0",
-      "accepted": false,
+      "accepted": true,
       "startDate": "23-1-2023"
     },
     {
@@ -101,7 +101,7 @@
       "password": "rjNo6K5J",
       "age": "59",
       "role": "0",
-      "accepted": false,
+      "accepted": true,
       "startDate": "23-1-2023"
     },
     {
