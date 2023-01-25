@@ -45,7 +45,11 @@ fetch(`http://localhost:3000/employees?username=${username}`, {
                     tr.appendChild(late);
 
                     let absent = document.createElement("td");
-                    absent.innerText = `${element.absent}`;
+                    if (element.absent == false) {
+                        absent.innerHTML = `<i class="fa-sharp fa-solid fa-check"></i>`;
+                    } else {
+                        absent.innerHTML = `<i class="fa-solid fa-square-xmark"></i>`;
+                    }
                     tr.appendChild(absent);
 
                     let In = document.createElement("td");

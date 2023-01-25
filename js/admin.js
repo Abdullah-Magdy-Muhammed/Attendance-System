@@ -124,7 +124,7 @@ fetch("http://localhost:3000/employees?accepted=false", {
 
             // admin accept the pending people
             let confirm = document.createElement("td");
-            confirm.innerHTML = `<button id='accept-${data[i].id}' class='btn-light px-2'>&check;</button> <button id= 'delete-${data[i].id}' class='btn-danger px-2'>X</button>`
+            confirm.innerHTML = `<button id='accept-${data[i].id}' class='btn-success px-2'><i class="fa-sharp fa-solid fa-circle-check"></i></button> <button id= 'delete-${data[i].id}' class='btn-danger px-2'><i class="fa-solid fa-trash"></i></button>`
             tr.appendChild(confirm);
 
             // admin refuse the pending people
